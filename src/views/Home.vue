@@ -1,18 +1,59 @@
 <template>
-  <div class="home">
-    <img alt="Vue logo" src="../assets/logo.png" />
-    <HelloWorld msg="Welcome to Your Vue.js App" />
-  </div>
+    <div>
+        <div class="mx-md-8 mx-4 mx-lg-8 mx-xl-8 hover">
+            <v-row
+                class="px-md-16 px-xl-16 px-lg-16 py-md-6 py-xl-10 py-lg-10  px-sm-6 px-6 category hover"
+            >
+                <v-col class="col-xl-4 col-lg-4 col-md-4 col-sm-12 col-12">
+                    <img src="../assets/images/category-1.jpg" alt="" />
+                </v-col>
+                <v-col class="col-xl-4 col-lg-4 col-md-4 col-sm-12 col-12 ">
+                    <img src="../assets/images/category-2.jpg" alt="" />
+                </v-col>
+                <v-col class="col-xl-4 col-lg-4 col-md-4 col-sm-12 col-12">
+                    <img src="../assets/images/category-3.jpg" alt="" />
+                </v-col>
+            </v-row>
+            <ProductItem
+                :title="`Featured Products`"
+                :listProduct="listProductFeat"
+            ></ProductItem>
+            <ProductItem
+                :title="`LastView Products`"
+                :listProduct="listProductLast"
+            ></ProductItem>
+        </div>
+        <!-- <div class=""> -->
+        <Banner></Banner>
+        <Comment></Comment>
+        <Brand></Brand>
+        <Footer></Footer>
+        <!-- </div> -->
+    </div>
 </template>
 
 <script>
-// @ is an alias to /src
-import HelloWorld from "@/components/HelloWorld.vue";
-
+import ProductItem from '../components/ProductItem'
+import Banner from '../components/Banner'
+import Comment from '../components/Comment'
+import Brand from '../components/Brand'
+import Footer from '../components/Footer'
 export default {
-  name: "Home",
-  components: {
-    HelloWorld
-  }
-};
+    name: 'home',
+    components: { ProductItem, Banner, Comment, Brand, Footer },
+    computed: {
+        listProductLast() {
+            return this.$store.getters.listProductLast
+        },
+        listProductFeat() {
+            return this.$store.getters.listProductFeat
+        },
+    },
+}
 </script>
+
+<style>
+.category img {
+    width: 99%;
+}
+</style>
