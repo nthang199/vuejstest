@@ -3,21 +3,33 @@
         <Header></Header>
         <v-main>
             <!-- Provides the application the proper gutter -->
-            <v-container fluid>
+            <div fluid class="ma-md-0 pa-md-0">
                 <!-- If using vue-router -->
                 <router-view></router-view>
-            </v-container>
+            </div>
         </v-main>
+        <Footer></Footer>
     </v-app>
 </template>
 <script>
 import Header from './components/Header'
+import Footer from './components/Footer'
 export default {
     name: 'App',
     data() {
         return {}
     },
-    components: { Header },
+    components: { Header, Footer },
+    watch: {
+        $route: function() {
+            if (this.$route.path === '/') {
+                this.isBanner = true
+            } else if (this.$route.path != '/') {
+                this.isBanner = false
+                console.log(this.$route.path)
+            }
+        },
+    },
 }
 </script>
 <style>

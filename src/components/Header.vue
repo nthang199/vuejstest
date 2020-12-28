@@ -11,6 +11,7 @@
                         alt="logo"
                     />
                 </v-col>
+                <!-- <div :class="menuPosition"> -->
                 <v-expand-transition>
                     <v-col
                         v-if="isActiveMenu"
@@ -50,7 +51,7 @@
                         >
                     </v-col></v-expand-transition
                 >
-                <v-expand-transition
+                <v-expand-transition :class="backgroundMenu"
                     ><v-col
                         v-if="isActiveMenu"
                         class="col-lg-1 col-md-1 col-xl-1 col-sm-12 col-12 header-menu"
@@ -74,9 +75,9 @@
                             to="/account"
                             >Account</router-link
                         >
-                    </v-col></v-expand-transition
-                >
-
+                    </v-col>
+                </v-expand-transition>
+                <!-- </div> -->
                 <div class="header-icon">
                     <img
                         src="../assets/images/cart.png"
@@ -182,21 +183,40 @@ export default {
                 'menu-background-none': !this.isOpenMenu,
             }
         },
+        menuPosition() {
+            return {
+                'menu-position': this.isOpenMenu,
+                'menu-position-md': !this.screen,
+            }
+        },
     },
     methods: {
         openMenu() {
             this.isOpenMenu = !this.isOpenMenu
+        },
+        activeBanner() {
+            if (this.$route.path === '/') {
+                this.isBanner = true
+                console.log(this.$route.path)
+            } else if (this.$route.path != '/') {
+                this.isBanner = false
+                console.log(this.$route.path)
+            }
         },
     },
     watch: {
         $route: function() {
             if (this.$route.path === '/') {
                 this.isBanner = true
-            } else {
+                console.log(this.$route.path)
+            } else if (this.$route.path != '/') {
                 this.isBanner = false
                 console.log(this.$route.path)
             }
         },
+    },
+    mounted() {
+        this.activeBanner()
     },
 }
 </script>
@@ -251,10 +271,26 @@ export default {
 .display-icon-block {
     display: block !important;
 }
+.menu-position {
+    position: fixed;
+    top: 4rem;
+    width: 100%;
+    z-index: 1;
+}
+.menu-position-md {
+    position: inherit;
+}
+.menu-position-none {
+    position: none;
+    /* top: 4rem;
+    width: 100%;
+    z-index: 1; */
+}
 .menu-background {
     /* position: absolute; */
+    top: 100px;
     background-color: rgb(31, 31, 31);
-    z-index: 200;
+    /* z-index: 200; */
 }
 .menu-background-none {
     background-color: none;

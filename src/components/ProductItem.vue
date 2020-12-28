@@ -1,6 +1,6 @@
 <template>
     <div>
-        <div class="pt-md-10 pt-xl-10 pt-lg-10 pt-sm-10 pt-10">
+        <div class="pt-md-0 pt-xl-0 pt-lg-0 pt-sm-10 pt-0">
             <h1 class="component-title">
                 {{ title }}
             </h1>
@@ -34,11 +34,7 @@ export default {
         listProduct: Array,
     },
     computed: {},
-    methods: {
-        getUrl(url) {
-            return '../assets/images/' + url
-        },
-    },
+    methods: {},
 }
 </script>
 

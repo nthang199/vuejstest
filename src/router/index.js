@@ -24,7 +24,7 @@ const routes = [
     //   import(/* webpackChunkName: "about" */ "../views/Navbar.vue")
   },
   {
-    path: "/detaisl",
+    path: "/details",
     name: "Details",
     component: Details
   },

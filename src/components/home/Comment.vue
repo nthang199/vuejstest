@@ -17,7 +17,7 @@
                         corrupti earum pariatur.
                     </p>
                     <v-avatar class="rounded-circle">
-                        <img src="../assets/images/user-1.png" alt="John" />
+                        <img src="../../assets/images/user-1.png" alt="John" />
                     </v-avatar>
                     <p
                         class="pt-md-6 pt-6 font-weight-bold  text-md-h6 text-h6"
@@ -40,7 +40,7 @@
                         corrupti earum pariatur.
                     </p>
                     <v-avatar class="rounded-circle">
-                        <img src="../assets/images/user-1.png" alt="John" />
+                        <img src="../../assets/images/user-1.png" alt="John" />
                     </v-avatar>
                     <p
                         class="pt-md-6 pt-6 font-weight-bold  text-md-h6 text-h6"
@@ -63,7 +63,7 @@
                         corrupti earum pariatur.
                     </p>
                     <v-avatar class="rounded-circle">
-                        <img src="../assets/images/user-1.png" alt="John" />
+                        <img src="../../assets/images/user-1.png" alt="John" />
                     </v-avatar>
                     <p class="pt-md-6 pt-6 font-weight-bold text-md-h6 text-h6">
                         Sean Parker

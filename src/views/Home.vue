@@ -34,9 +34,9 @@
 
 <script>
 import ProductItem from '../components/ProductItem'
-import Banner from '../components/Banner'
-import Comment from '../components/Comment'
-import Brand from '../components/Brand'
+import Banner from '../components/home/Banner'
+import Comment from '../components/home/Comment'
+import Brand from '../components/home/Brand'
 import Footer from '../components/Footer'
 export default {
     name: 'home',

@@ -4,7 +4,7 @@
             class="px-xl-16 px-lg-16 px-md-16 px-sm-6 px-6 py-md-16 py-6 py-sm-6 banner-background d-flex align-center"
         >
             <v-col class="col-xl-6 col-md-6 col-lg-6 col-sm-12 col-12">
-                <img src="../assets/images/exclusive.png" alt="" />
+                <img src="../../assets/images/exclusive.png" alt="" />
             </v-col>
             <v-col
                 class="col-xl-6 col-md-6 col-lg-6 col-sm-12 col-12 text-md-left text-center"
